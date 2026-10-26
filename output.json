@@ -19,7 +19,7 @@
     "payment-service": 1090,
     "user-service": 1124
   },
-  "RuleStats": {
+  "IncidentStats": {
     "DB_POOL_EXHAUSTED": {
       "Count": 271,
       "LogSeverity": {

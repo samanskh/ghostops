@@ -18,7 +18,7 @@ func ReadFile(path string) (analyze.Stats, error) {
 	}
 
 	defer f.Close()
-	shared.KeyWords = keyword.MakeTotalKeywords(shared.Rules)
+	shared.KeyWords = keyword.MakeTotalKeywords(shared.Incidents)
 	stats := analyze.NewStats()
 	scanner := bufio.NewScanner(f)
 	scanner.Buffer(make([]byte, 0, 64*1024), 10*1024*1024)

@@ -5,9 +5,9 @@ import (
 	"strings"
 )
 
-func MakeTotalKeywords(ruleList []shared.Rule) map[string]bool{
+func MakeTotalKeywords(IncidentList []shared.Incident) map[string]bool{
 	output := make(map[string]bool)
-	for _,r := range ruleList{
+	for _,r := range IncidentList{
 		for key,_ := range r.Keywords{
 			output[key] = true
 		}

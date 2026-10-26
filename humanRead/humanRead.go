@@ -43,7 +43,7 @@ func HumanRead(stats analyze.Stats){
 	}
 
 	fmt.Println("======= incident stats =======")
-	for key,value := range stats.RuleStats{
+	for key,value := range stats.IncidentStats{
 		fmt.Printf("incident %v happend with %v severity with %v log severity %d times (first happened at %v last happened at %v) \n",key,value.Severity,maxLogSeverity(value.LogSeverity),value.Count,value.StartTime.String()[:19],value.LastTime.String()[:19])
 	}
 

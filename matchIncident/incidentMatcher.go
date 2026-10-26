@@ -5,19 +5,19 @@ import (
 	"ghostops/keyword"
 )
 
-func RuleMatcher(line shared.Line) shared.Rule {
+func IncidentMatcher(line shared.Line) shared.Incident {
 	message := line.Message
 	messageKeywords := keyword.KeywordFinder(message)
-	for _, rule := range shared.Rules {
+	for _, Incident := range shared.Incidents {
 		count := make(map[string]bool)
 		for _, message := range messageKeywords {
-			if rule.Keywords[message] {
+			if Incident.Keywords[message] {
 				count[message] = true
 			}
 		}
-		if len(count) == len(rule.Keywords) {
-			return rule
+		if len(count) == len(Incident.Keywords) {
+			return Incident
 		}
 	}
-	return shared.Rule{}
+	return shared.Incident{}
 }

@@ -1,7 +1,7 @@
 package analyze
 
 import (
-	"ghostops/matchRule"
+	"ghostops/matchIncident"
 	"ghostops/parser"
 	"ghostops/shared"
 	"time"
@@ -13,18 +13,14 @@ type Stats struct{
 	InvalidFieldCount map[string]int 
 	SeverityCounts map[string]int
 	ServiceCounts map[string]int
-	RuleStats map[string]shared.IncidentStat
+	IncidentStats map[string]shared.IncidentStat
 }
 
 func NewStats() *Stats{
 	var statsInfo = Stats{ValidLinesCount:0, InvalidLinesCount:0, InvalidFieldCount:make(map[string]int),
-	 SeverityCounts:make(map[string]int), ServiceCounts:make(map[string]int),RuleStats: make(map[string]shared.IncidentStat),}
+	 SeverityCounts:make(map[string]int), ServiceCounts:make(map[string]int),IncidentStats: make(map[string]shared.IncidentStat),}
 	return &statsInfo
 }
-// func NewRuleStat() *map[*shared.Rule]int{
-// 	var ruleStat = make(map[*shared.Rule]int)
-// 	return &ruleStat
-// }
 
 func (s *Stats) Analyze(line string){
 	event,bools := parser.Parser(line)
@@ -36,14 +32,14 @@ func (s *Stats) Analyze(line string){
 		s.SeverityCounts[severityKey] ++
 		serviceKey := event.Service
 		s.ServiceCounts[serviceKey] ++
-		rule := matchrule.RuleMatcher(event)
-		if rule.RuleName != "" {
+		rule := matchrule.IncidentMatcher(event)
+		if rule.IncidentName != "" {
 			ts, err := time.Parse(time.RFC3339, event.Timestamp)
 			if err != nil {
 				ts = time.Time{}
 			}
 			
-			stat := s.RuleStats[rule.RuleName]
+			stat := s.IncidentStats[rule.IncidentName]
 			if stat.Count == 0{
 				stat = shared.IncidentStat{Count:0,Severity: rule.IncidentSeverity, LogSeverity:make(map[string]int), StartTime: ts,LastTime: ts,}
 			}else{
@@ -57,7 +53,7 @@ func (s *Stats) Analyze(line string){
 			stat.Count++
 			logSeverity := stat.LogSeverity.(map[string]int)
 			logSeverity[severityKey]++
-			s.RuleStats[rule.RuleName] = stat
+			s.IncidentStats[rule.IncidentName] = stat
 		}
 
 		
