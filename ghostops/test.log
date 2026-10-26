@@ -1,0 +1,9 @@
+2026-10-01T00:26:06Z INFO payment-service User successfully logged in
+2026-10-02T00:27:29Z INFO payment-service Token generated for user session
+2026-10-02T12:20:47Z FATAL user-service Database connection pool exhausted and crashed system
+2026-10-01T03:29:21Z ERROR order-service SQL syntax error while executing query: syntax error at end of input
+2026-10-04T23:15:09Z INFO notification-service Token generated for user session
+2026-10-03T09:10:44Z INFO auth-service User successfully logged in
+2026-10-04T05:04:17Z WARN order-service High memory usage detected: 85%
+2026-10-03T03:03:48Z WARN payment-service Deprecated API endpoint /api/old/users accessed
+2026-10-02T23:41:00Z FATAL user-service Database connection pool exhausted and crashed system

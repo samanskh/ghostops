@@ -1,0 +1,105 @@
+{
+  "ValidLinesCount": 5532,
+  "InvalidLinesCount": 468,
+  "InvalidFieldCount": {
+    "service": 373,
+    "severity": 468,
+    "timestamp": 373
+  },
+  "SeverityCounts": {
+    "ERROR": 820,
+    "FATAL": 271,
+    "INFO": 3335,
+    "WARN": 1106
+  },
+  "ServiceCounts": {
+    "auth-service": 1106,
+    "notification-service": 1130,
+    "order-service": 1082,
+    "payment-service": 1090,
+    "user-service": 1124
+  },
+  "RuleStats": {
+    "DB_POOL_EXHAUSTED": {
+      "Count": 271,
+      "LogSeverity": {
+        "FATAL": 271
+      },
+      "Severity": "CRITICAL",
+      "StartTime": "2026-10-01T00:52:07Z",
+      "LastTime": "2026-10-06T18:49:45Z"
+    },
+    "DB_POOL_THRESHOLD": {
+      "Count": 272,
+      "LogSeverity": {
+        "WARN": 272
+      },
+      "Severity": "MEDIUM",
+      "StartTime": "2026-10-01T00:04:53Z",
+      "LastTime": "2026-10-06T18:36:10Z"
+    },
+    "DEPRECATED_API_USAGE": {
+      "Count": 260,
+      "LogSeverity": {
+        "WARN": 260
+      },
+      "Severity": "LOW",
+      "StartTime": "2026-10-01T00:34:33Z",
+      "LastTime": "2026-10-06T17:29:45Z"
+    },
+    "HIGH_MEMORY_USAGE": {
+      "Count": 298,
+      "LogSeverity": {
+        "WARN": 298
+      },
+      "Severity": "MEDIUM",
+      "StartTime": "2026-10-01T00:06:02Z",
+      "LastTime": "2026-10-06T18:04:30Z"
+    },
+    "NULL_POINTER_EXCEPTION": {
+      "Count": 175,
+      "LogSeverity": {
+        "ERROR": 175
+      },
+      "Severity": "HIGH",
+      "StartTime": "2026-10-01T00:21:46Z",
+      "LastTime": "2026-10-06T17:01:53Z"
+    },
+    "PAYMENT_GATEWAY_502": {
+      "Count": 141,
+      "LogSeverity": {
+        "ERROR": 141
+      },
+      "Severity": "HIGH",
+      "StartTime": "2026-10-01T00:24:09Z",
+      "LastTime": "2026-10-06T17:59:02Z"
+    },
+    "PAYMENT_GATEWAY_TIMEOUT": {
+      "Count": 163,
+      "LogSeverity": {
+        "ERROR": 163
+      },
+      "Severity": "HIGH",
+      "StartTime": "2026-10-01T00:24:58Z",
+      "LastTime": "2026-10-06T17:19:29Z"
+    },
+    "RATE_LIMIT_WARNING": {
+      "Count": 276,
+      "LogSeverity": {
+        "WARN": 276
+      },
+      "Severity": "MEDIUM",
+      "StartTime": "2026-10-01T00:20:21Z",
+      "LastTime": "2026-10-06T17:26:24Z"
+    },
+    "SQL_SYNTAX_ERROR": {
+      "Count": 147,
+      "LogSeverity": {
+        "ERROR": 147
+      },
+      "Severity": "HIGH",
+      "StartTime": "2026-10-01T01:52:05Z",
+      "LastTime": "2026-10-06T14:47:58Z"
+    }
+  }
+}
