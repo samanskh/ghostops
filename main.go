@@ -6,6 +6,7 @@ import (
 	"ghostops/read"
 	"ghostops/humanRead"
 	"ghostops/writeJson"
+	"ghostops/analyze"
 )
 
 func main(){
@@ -30,19 +31,19 @@ func main(){
 		fmt.Fprintln(os.Stderr, "please give the input file path")
 	}else{
 		inputPath = inputTerminal[0]
-		stats,err := read.ReadFile(inputPath)
+		stats := analyze.NewStats()
+		err := read.ReadFile(inputPath,stats)
 		if err != nil{
 			fmt.Fprintln(os.Stderr, "we have error in reading",err)
 			return
 		}
 		// fmt.Println(stats)
-		humanread.HumanRead(stats)
-		errorWrite := writejson.WriteJson(stats,outputPath)
+		humanread.HumanRead(*stats)
+		errorWrite := writejson.WriteJson(*stats,outputPath)
 		if errorWrite != nil{
 			fmt.Fprintln(os.Stderr, "we have error in writing in json file",errorWrite)
 		}
-		// ---------------------------- make readabe print func for terminal
-		// ---------------------------- make json func for making the file
+
 	}
 
 	

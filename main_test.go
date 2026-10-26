@@ -3,11 +3,13 @@ package main
 import(
 	"testing"
 	"ghostops/read"
+	"ghostops/analyze"
 )
 
 func TestStats(t *testing.T) {
 	filePath := "sample.log"
-	stats,err := read.ReadFile(filePath)
+	stats := analyze.NewStats()
+	err := read.ReadFile(filePath, stats)
 	numberOfLines := 6000	
 	if err != nil {
 		t.Fatalf("error in reading file: %v", err)
