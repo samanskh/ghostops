@@ -15,6 +15,7 @@ func maxLogSeverity(LogSeverity any) string{
 		for key,val := range logsever{
 			if val > maxValue{
 				maxKey = key
+				maxValue = val
 			}
 		}
 		return maxKey
